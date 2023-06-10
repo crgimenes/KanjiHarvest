@@ -20,8 +20,8 @@ var (
 func printKana(text string) {
 	for _, r := range text {
 		s := string(r)
-		//isContable := kana.IsHiragana(s) || kana.IsKatakana(s) || kana.IsKanji(s)
-		isContable := kana.IsHiragana(s)
+		isContable := kana.IsHiragana(s) || kana.IsKatakana(s) || kana.IsKanji(s)
+		//isContable := kana.IsHiragana(s)
 		if kana.IsKanji(s) {
 			fmt.Printf("Kanji: %v\n", s)
 		} else if kana.IsKatakana(s) {
