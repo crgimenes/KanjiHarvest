@@ -62,6 +62,7 @@ func extractLinks(body string) []string {
 
 		if tokenType == html.StartTagToken && token.Data == "a" {
 			for _, attr := range token.Attr {
+				fmt.Printf("attr: %#v\n", attr)
 				if attr.Key == "href" {
 					links = append(links, attr.Val)
 				}
@@ -110,9 +111,11 @@ func main() {
 	url := "https://www.jst.go.jp"
 	crawler(url)
 
-	for k, v := range runeCount {
-		fmt.Printf("%v: %v\n", string(k), v)
-	}
+	/*
+		for k, v := range runeCount {
+			fmt.Printf("%v: %v\n", string(k), v)
+		}
+	*/
 
 	// convert map to slice
 
